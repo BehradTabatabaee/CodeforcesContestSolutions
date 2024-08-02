@@ -27,18 +27,20 @@ struct custom_hash {
     }
 };
 
-// function to check whether a given number is a power of 2 or not
-bool isPowerOfTwo(int n) {
-    return (n && !(n & (n - 1)));
-}
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int t;
     cin >> t;
     while (t--) {
-
+        int l, r;
+        cin >> l >> r;
+        int num = 2;
+        while (num <= r) {
+            num *= 2;
+        }
+        num /= 2;
+        cout << log2(num) << endl;
     }
     return 0;
 }
