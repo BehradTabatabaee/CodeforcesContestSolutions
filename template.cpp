@@ -32,6 +32,21 @@ bool isPowerOfTwo(int n) {
     return (n && !(n & (n - 1)));
 }
 
+// decimal number to an array of boolean (bits) conversion
+vector<bool> decimalToBinary(int n) {
+    if (n == 0) {
+        return {0};
+    }
+    int numberOfBits = log2(n) + 1;
+    vector<bool> ans(numberOfBits, 0);
+    for (int i = numberOfBits; i >= 0; i--) {
+        if ((n & (1 << i)) == (1 << i)) {
+            ans[i] = 1;
+        }
+    }   
+    return ans;
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
