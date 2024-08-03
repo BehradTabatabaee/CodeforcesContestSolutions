@@ -39,7 +39,7 @@ vector<bool> decimalToBinary(int n) {
     }
     int numberOfBits = log2(n) + 1;
     vector<bool> ans(numberOfBits, 0);
-    for (int i = numberOfBits; i >= 0; i--) {
+    for (int i = numberOfBits - 1; i >= 0; i--) {
         if ((n & (1 << i)) == (1 << i)) {
             ans[i] = 1;
         }
